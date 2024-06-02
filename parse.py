@@ -27,6 +27,7 @@ raw = [BeautifulSoup(target, 'html.parser', from_encoding='utf-8').select('row')
 
 menus = [today, tomorrow]
 
+## TODO: 시간대 중 일부가 누락된 경우
 # today
 if raw[0]:
     for meal in raw[0]:

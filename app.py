@@ -9,14 +9,13 @@ def date_format(raw: str):
     return f'{month}월 {day}일'
 
 def main(page: ft.Page):
-    page.window_width = 400
-    page.window_height = 600
+    page.window_width, page.window_height = 400, 600
     page.title = 'Find today\'s Menu'
     page.fonts = {'pretendard': 'assets/Pretendard-Regular.ttf'}
     page.theme = ft.Theme(font_family='pretendard')
 
-    time_index = None
-    date_index = None
+    time_index: int = None
+    date_index: int = None
 
     class OptionButton(ft.Container):
         instances: list = []
