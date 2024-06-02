@@ -48,6 +48,7 @@ def main(page: ft.Page):
 
         @classmethod
         def update_color(cls):
+            instance: OptionButton
             for instance in cls.instances:
                 instance.set_selected()
                 instance.bgcolor = ft.colors.BLUE_200 if instance.is_selected else ft.colors.BLUE_50
