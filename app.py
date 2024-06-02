@@ -12,7 +12,7 @@ def main(page: ft.Page):
     page.window_width = 400
     page.window_height = 600
     page.title = 'Find today\'s Menu'
-    page.fonts = {'pretendard': '~/.local/share/fonts/Pretendard-Regular.ttf'}
+    page.fonts = {'pretendard': 'assets/Pretendard-Regular.ttf'}
     page.theme = ft.Theme(font_family='pretendard')
 
     time_index = None
