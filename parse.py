@@ -23,7 +23,7 @@ def dish_name(raw: str) -> str:
     return raw.replace(' ', '').split('(')[0].rstrip('s').replace('`', '')
 
 targets = [request.urlopen(url) for url in [today_url, tomorrow_url]]
-raw = [BeautifulSoup(target, 'html.parser').select('row') for target in targets]
+raw = [BeautifulSoup(target, 'html.parser', from_encoding='utf-8').select('row') for target in targets]
 
 menus = [today, tomorrow]
 

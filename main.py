@@ -14,7 +14,7 @@ if __name__ == '__main__':
     print(today, tomorrow)
 
     # json 양식: date, date, [menus] * 6
-    with open('./saved/menus.json', 'r') as file:
+    with open('./saved/menus.json', 'r', encoding='utf-8') as file:
         try:
             data = json.loads(file.read())
         except:

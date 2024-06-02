@@ -1,7 +1,7 @@
 import json
 import flet as ft
 
-with open('./saved/menus.json', 'r') as file:
+with open('./saved/menus.json', 'r', encoding='utf-8') as file:
     data = json.loads(file.read())
 
 def date_format(raw: str):
