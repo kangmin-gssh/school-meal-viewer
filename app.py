@@ -1,13 +1,6 @@
 import json
 import flet as ft
 
-with open('./saved/menus.json', 'r', encoding='utf-8') as file:
-    data = json.loads(file.read())
-
-def date_format(raw: str):
-    month, day = raw[4:6], raw[6:8]
-    return f'{month}월 {day}일'
-
 def main(page: ft.Page):
     page.window_width, page.window_height = 400, 600
     page.title = 'Find today\'s Menu'
@@ -16,6 +9,13 @@ def main(page: ft.Page):
 
     time_index: int = None
     date_index: int = None
+
+    with open('./saved/menus.json', 'r', encoding='utf-8') as file:
+        data = json.loads(file.read())
+
+    def date_format(raw: str):
+        month, day = raw[4:6], raw[6:8]
+        return f'{month}월 {day}일'
 
     class OptionButton(ft.Container):
         instances: list = []
@@ -107,4 +107,4 @@ def main(page: ft.Page):
             alignment=ft.alignment.top_center, border=ft.border.all(1, ft.colors.GREY), border_radius=5, padding=15)
     )
 
-ft.app(main)
+# ft.app(main)

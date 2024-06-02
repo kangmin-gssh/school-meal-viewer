@@ -1,7 +1,7 @@
-import sys
 import json
-import subprocess
 from datetime import datetime, timedelta
+import flet as ft
+import app, parse
 
 if __name__ == '__main__':
     now = datetime.now()
@@ -24,6 +24,6 @@ if __name__ == '__main__':
     if today == data[0]:
         pass
     else:
-        subprocess.run([sys.executable, './parse.py'])
+        parse.parse_menu()
 
-    subprocess.run([sys.executable, './app.py'])
+    ft.app(app.main)
