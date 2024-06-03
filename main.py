@@ -26,4 +26,4 @@ if __name__ == '__main__':
     else:
         parse.parse_menu()
 
-    ft.app(app.main)
+    ft.app(app.main, assets_dir="asset")

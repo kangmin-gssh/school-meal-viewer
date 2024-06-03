@@ -4,7 +4,7 @@ import flet as ft
 def main(page: ft.Page):
     page.window_width, page.window_height = 400, 600
     page.title = 'Find today\'s Menu'
-    page.fonts = {'pretendard': 'assets/Pretendard-Regular.ttf'}
+    page.fonts = {'pretendard': 'Pretendard-Regular.ttf'}
     page.theme = ft.Theme(font_family='pretendard')
 
     time_index: int = None
