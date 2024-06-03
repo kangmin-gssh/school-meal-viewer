@@ -11,4 +11,5 @@
 ## Dependency
 
 **flet** ≥ 0.22.0   
-**bs4**(Beautifulsoup) ≥ 0.0.2
+**bs4** (Beautifulsoup) ≥ 0.0.2
+※ This project might require **python** with the version of 3.10 or above.
