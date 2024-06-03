@@ -4,8 +4,13 @@ import flet as ft
 def main(page: ft.Page):
     page.window_width, page.window_height = 400, 600
     page.title = 'Find today\'s Menu'
-    page.fonts = {'pretendard': 'Pretendard-Regular.ttf'}
-    page.theme = ft.Theme(font_family='pretendard')
+    page.fonts = {
+        'regular': 'Pretendard-Regular.ttf',
+        'medium': 'Pretendard-Medium.ttf',
+        'semibold': 'Pretendard-SemiBold.ttf',
+        'bold': 'Pretendard-Bold.ttf'
+    }
+    page.theme = ft.Theme(font_family='regular')
 
     time_index: int = None
     date_index: int = None
@@ -22,7 +27,7 @@ def main(page: ft.Page):
 
         def __init__(self, text: str, position: str, index_type: str, index: int):
             super().__init__()
-            self.content = ft.Text(text, size=15, weight=ft.FontWeight.W_500)
+            self.content = ft.Text(text, size=15, style=ft.TextStyle(font_family='medium'))
             self.padding = ft.padding.symmetric(8, 13)
             self.bgcolor = ft.colors.BLUE_50
             self.border_radius = \
@@ -81,10 +86,10 @@ def main(page: ft.Page):
 
 
     def dish_text(name):
-        return ft.Text(name, size=18, weight=ft.FontWeight.W_600)
+        return ft.Text(name, size=18, style=ft.TextStyle(font_family='semibold'))
     
     def date_text(date):
-        return ft.Text(date_format(date), size=22, weight=ft.FontWeight.W_700)
+        return ft.Text(date_format(date), size=22, style=ft.TextStyle(font_family='bold'))
     
     list_of_meal = ft.ListView(expand=1, auto_scroll=True, spacing=10, controls=[dish_text('날짜 및 시간를 선택해주세요 :P')])
 
