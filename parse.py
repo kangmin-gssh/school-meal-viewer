@@ -8,7 +8,7 @@ def parse_menu():
     school_code = '8750555' # 경산과학고등학교
 
     now = datetime.now()
-    if now.hour < 6:
+    if now.hour < 8:
         now = now - timedelta(days=1)
 
     today = now.strftime('%Y%m%d')
