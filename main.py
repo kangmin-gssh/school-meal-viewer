@@ -5,7 +5,7 @@ import app, parse
 
 if __name__ == '__main__':
     now = datetime.now()
-    if now.hour < 6:
+    if now.hour < 8:
         now = now - timedelta(days=1)
 
     today = now.strftime('%Y%m%d')
