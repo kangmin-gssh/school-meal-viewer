@@ -1,3 +1,5 @@
+import os
+import platform
 import json
 from urllib import request
 from datetime import datetime, timedelta
@@ -23,7 +25,11 @@ def parse_menu():
     def dish_name(raw: str) -> str:
         return raw.replace(' ', '').split('(')[0].rstrip('s').replace('`', '')
 
-    targets = [request.urlopen(url) for url in [today_url, tomorrow_url]]
+    try:
+        targets = [request.urlopen(url) for url in [today_url, tomorrow_url]]
+    except:
+        if platform.system() == 'Linux':
+            os.system('zenity --error --icon-name=network-wireless-error-symbolic --text="식단 데이터를 불러올 수 없습니다.\n인터넷 연결을 확인하세요." --title="문제 발생"')
     raw = [BeautifulSoup(target, 'html.parser', from_encoding='utf-8').select('row') for target in targets]
 
     menus = [today, tomorrow]
